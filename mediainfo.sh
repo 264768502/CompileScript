@@ -23,20 +23,20 @@ echo "###################################"
 echo "  Compile ZenLib"
 cd ${HOME}/mediainfo/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
 ./autogen.sh
-./configure --enable-static --host=arm-none-linux-gnueabi --prefix=/home/yaorj/arm-2009q1/arm-none-linux-gnueabi
+./configure --enable-static --host=arm-none-linux-gnueabi --prefix=${HOME}/mediainfo/arm-2009q1/arm-none-linux-gnueabi
 make && make install
 echo "###################################"
 echo "  Compile MediaInfoLib"
 cd ${HOME}/mediainfo/MediaInfo_CLI_GNU_FromSource/MediaInfoLib/Project/GNU/Library
 ./autogen.sh
-./configure --enable-static --host=arm-none-linux-gnueabi --prefix=/home/yaorj/arm-2009q1/arm-none-linux-gnueabi
+./configure --enable-static --host=arm-none-linux-gnueabi --prefix=${HOME}/mediainfo/arm-2009q1/arm-none-linux-gnueabi
 make -j16 && make install
 echo "###################################"
 echo "  Compile MediaInfo CLI"
 cd ${HOME}/mediainfo/MediaInfo_CLI_GNU_FromSource/MediaInfo/Project/GNU/CLI
 export CXXFLAGS='-static -Wl,--whole-archive -lpthread -Wl,--no-whole-archive -lc'
 ./autogen.sh
-./configure --enable-static --host=arm-none-linux-gnueabi --prefix=/home/yaorj/arm-2009q1/arm-none-linux-gnueabi
+./configure --enable-static --host=arm-none-linux-gnueabi --prefix=${HOME}/mediainfo/arm-2009q1/arm-none-linux-gnueabi
 make
 rm mediainfo
 ${HOME}/mediainfo/arm-2009q1/bin/arm-none-linux-gnueabi-g++ \
